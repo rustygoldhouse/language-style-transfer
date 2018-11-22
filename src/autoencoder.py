@@ -56,9 +56,9 @@ class Aligned_LSTM_Autoencoder:
         self.D_loss = adv_loss
 
         #Define optimizers
-        D_solver, G_solver = get_solvers()
-        self.G_train_step = G_solver.minimize(self.G_loss)
-        self.D_train_step = D_solver.minimize(self.D_loss)
+        #D_solver, G_solver = get_solvers()
+        #self.G_train_step = G_solver.minimize(self.G_loss)
+        #self.D_train_step = D_solver.minimize(self.D_loss)
 
         # Write summaries
         tf.summary.scalar('rec_loss1', self.rec_loss1)
@@ -84,7 +84,7 @@ class Aligned_LSTM_Autoencoder:
             print("Vocab size: {0}".format(self.vocab_size))
             print("Max Length: {0}".format(self.max_length))
 
-    def train(self, pickle_path, num_epochs=10, batch_size=10, \
+    def train(self, pickle_path, num_epochs=10, batch_size=36, \
                saved_model_path='../models/aligned_lstm_ae/aligned_lstm_ae.ckpt', \
                checkpoint_dir='../models/aligned_lstm_ae/'):
         # Get X1 and X2 from pickle_path
