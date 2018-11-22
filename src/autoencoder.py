@@ -100,8 +100,10 @@ class Aligned_LSTM_Autoencoder:
         saver = tf.train.Saver()
         train_writer = tf.summary.FileWriter(checkpoint_dir + 'train')
 
+        gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.333)
+
         step = 0
-        with tf.Session() as sess:
+        with tf.Session(config=tf.ConfigProto(gpu_options=gpu_options)) as sess:
             # Load model
             try:
       	        saver.restore(sess, tf.train.latest_checkpoint(checkpoint_dir))
