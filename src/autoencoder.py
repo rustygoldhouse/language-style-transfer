@@ -84,7 +84,7 @@ class Aligned_LSTM_Autoencoder:
             print("Vocab size: {0}".format(self.vocab_size))
             print("Max Length: {0}".format(self.max_length))
 
-    def train(self, pickle_path, num_epochs=10, batch_size=100, \
+    def train(self, pickle_path, num_epochs=10, batch_size=10, \
                saved_model_path='../models/aligned_lstm_ae/aligned_lstm_ae.ckpt', \
                checkpoint_dir='../models/aligned_lstm_ae/'):
         # Get X1 and X2 from pickle_path

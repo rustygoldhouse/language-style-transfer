@@ -14,7 +14,7 @@ import numpy as np
 def read_all_files(dir_path):
     docs = ""
     for filename in os.listdir(dir_path):
-        with open(dir_path + filename, 'r') as file:
+        with open(dir_path + '/' + filename, 'r') as file:
             docs += file.read()
     return docs
 
